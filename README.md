@@ -1,2 +1,2 @@
 # FuelMechanicAIApp
-use something similar to the summary in your README.md
+An app for emergency fuel delivery and mechanic services.
