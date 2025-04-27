@@ -1,0 +1,10 @@
+{
+    "fuel_requests": [
+        { "name": "John Doe", "location": "Location A", "fuel_type": "Petrol", "amount": 20 },
+        { "name": "Jane Smith", "location": "Location B", "fuel_type": "Diesel", "amount": 15 }
+    ],
+    "mechanic_requests": [
+        { "name": "John Doe", "location": "Location A", "issue": "Flat Tire" },
+        { "name": "Jane Smith", "location": "Location B", "issue": "Engine Trouble" }
+    ]
+}

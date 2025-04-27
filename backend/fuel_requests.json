@@ -1,0 +1,27 @@
+@app.route('/view_fuel_requests', methods=['GET'])
+def view_fuel_requests():
+    try:
+        with open('fuel_requests.json', 'r') as f:
+            lines = f.readlines()
+
+            # Check if the file is empty
+            if not lines:
+                return jsonify({"message": "No fuel requests found"}), 404
+
+            requests = []
+            for line in lines:
+                # Skip empty lines
+                if line.strip():
+                    try:
+                        request_data = json.loads(line)  # Try to load JSON from the line
+                        requests.append(request_data)
+                    except json.JSONDecodeError:
+                        # Skip lines that are not valid JSON
+                        continue
+    except FileNotFoundError:
+        return jsonify({"message": "fuel_requests.json file not found"}), 404
+    except Exception as e:
+        return jsonify({"message": "An unexpected error occurred", "error": str(e)}), 500
+    return jsonify({"fuel_requests": requests})
+   
+{"location": "Anna Nagar", "fuel_type": "Petrol", "quantity": 5}
